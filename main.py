@@ -16,7 +16,7 @@ def classify(filename):
     freq_signal = abs(fft(signal))
     freqs = np.fft.fftfreq(len(signal), 1/sr)
     #filter out frequencies outside of expected speech range
-    mask = np.logical_and(freqs > 80, freqs < 250)
+    mask = np.logical_and(freqs > 85, freqs < 245)
     freq_signal = freq_signal[mask]
     freqs = freqs[mask]
     #ranked = sorted(zip(freqs, freq_signal), key = lambda x: x[1], reverse = True)
